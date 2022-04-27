@@ -42,8 +42,6 @@ class Searching(Resource):
         assert len(searched_texts) == len(searched_ids), "len of searched texts not equals len of searched ids"
 
         search_results = duplicates_search_func(searched_ids, searched_texts, ids, texts, min_score)
-        print("search_results:", search_results)
-
         return jsonify({"duplicates": str(search_results)})
 
 
