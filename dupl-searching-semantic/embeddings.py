@@ -1,6 +1,4 @@
 """Собраны ембеддинги на основании библиотеки Gensim"""
-import gensim
-from gensim import matutils
 
 
 def doc2bow_func(model, tokenize_texts):
@@ -56,23 +54,3 @@ class Embedding:
     def __call__(self, texts, num_terms=None):
         return self.texts_processing(texts)
 
-
-class GensimEmbedding(Embedding):
-    """Abstract Factory for Classes which converting texts into vectors."""
-
-    def __init__(self, model, embedding):
-        super().__init__(model, embedding)
-        if isinstance(self.model, gensim.corpora.Dictionary):
-            self.num_topics = len(self.model)
-        elif isinstance(self.model, gensim.models.LsiModel):
-            self.num_topics = self.model.num_topics
-
-    def texts2np_array(self, texts: []):
-        """Convert from gensim object to numpy vectors"""
-        gensim_vectors = self.texts_processing(texts)
-        csr_vectors = matutils.corpus2csc(gensim_vectors, num_terms=self.num_topics)
-        np_vectors = csr_vectors.toarray()
-        return np_vectors.T
-
-    def __call__(self, texts, num_terms=None):
-        return self.texts2np_array(texts)

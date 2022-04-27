@@ -13,8 +13,5 @@ RUN apt-get update && apt-get install -y build-essential libpoppler-cpp-dev pkg-
 RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
-# tell the port number the container should expose
-EXPOSE 6004
-
 # run the command
 CMD ["python", "./app_searching.py"]

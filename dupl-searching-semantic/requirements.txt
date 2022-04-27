@@ -1,7 +1,5 @@
 flask
-nmslib
 flask_restplus
-pymystem3
-gensim
 sklearn
+sentence-transformers
 Werkzeug==0.16.1
