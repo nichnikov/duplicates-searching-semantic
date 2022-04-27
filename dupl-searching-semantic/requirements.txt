@@ -3,3 +3,4 @@ flask_restplus
 sklearn
 sentence-transformers
 Werkzeug==0.16.1
+markupsafe==2.0.1

@@ -8,3 +8,4 @@ requests
 flask_cors
 xlrd
 python-dotenv
+markupsafe==2.0.1
