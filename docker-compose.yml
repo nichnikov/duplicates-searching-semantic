@@ -3,8 +3,8 @@ services:
   dpl_s:
     image: dupl-searching-semantic
     ports:
-      - "6004:6004"
+      - "7001:7001"
   dpl_s_inf:
     image: dupl-searching-interfaces-semantic
     ports:
-      - "6001:6001"
+      - "7000:7000"
